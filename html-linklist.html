@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Links</title>
+  <!-- MDL 樣式 -->
+  <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
+  <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+    .page-content {
+      padding: 24px;
+      max-width: 960px;
+      font-size: 14px;
+      font-weight: 500;
+      margin: auto;
+      font-family: '-apple-system','BlinkMacSystemFont','SF Pro','SF Pro Display','PingFang TC', 'Inter', 'Roboto','AppleGothic','Microsoft JhengHei UI',sans-serif;
+    }
+    .mdl-data-table {
+      width: 100%;
+      font-size: 14px;
+      font-weight: 500;
+      font-family: '-apple-system','BlinkMacSystemFont','SF Pro','SF Pro Display','PingFang TC', 'Inter', 'Roboto','AppleGothic','Microsoft JhengHei UI',sans-serif;
+    }
+    .browse-button {
+      width: 100px;
+      font-family: '-apple-system','BlinkMacSystemFont','SF Pro','SF Pro Display','PingFang TC', 'Inter', 'Roboto','AppleGothic','Microsoft JhengHei UI',sans-serif;
+      text-transform: none;
+    }
+    .mdl-layout-title{
+        font-family: '-apple-system','BlinkMacSystemFont','SF Pro','SF Pro Display','PingFang TC', 'Inter', 'Roboto','AppleGothic','Microsoft JhengHei UI',sans-serif;  
+        font-weight: 500;  
+    }
+    .mdl-layout__header {
+      background-color: #1E88E5;
+    }</style>
+</head>
+</head>
+<body>
+
+  <!-- Header -->
+  <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+    <header class="mdl-layout__header">
+      <div class="mdl-layout__header-row">
+        <span class="mdl-layout-title">Links</span>
+      </div>
+    </header>
+    <main class="mdl-layout__content">
+      <div class="page-content">
+        <table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp">
+          <thead>
+            <tr>
+              <th class="mdl-data-table__cell--non-numeric">名稱</th>
+              <th class="browse-button" style="text-align: left;" >動作</th>
+            </tr>
+          </thead>
+          <tbody id="file-table-body">
+            <!-- JavaScript 會自動插入表格內容 -->
+          </tbody>
+        </table>
+      </div>
+    </main>
+  </div>
+
+  <script>
+    // 外部網站清單
+    const sites = [
+      { name: "第一個網站", url: "https://www.google.com" },
+      { name: "第二個網站", url: "https://www.google.com" },
+      { name: "第三個網站", url: "https://www.google.com" },
+    ];
+
+    const tableBody = document.getElementById("file-table-body");
+
+    sites.forEach(site => {
+      const row = document.createElement("tr");
+      row.style.cursor = "pointer"; 
+      row.onclick = () => window.open(site.url, "_blank");
+
+      const nameCell = document.createElement("td");
+      nameCell.className = "mdl-data-table__cell--non-numeric";
+      nameCell.textContent = site.name;
+      row.appendChild(nameCell);
+
+      const actionCell = document.createElement("td");
+      actionCell.className = "browse-button";
+      const link = document.createElement("a");
+      link.href = site.url;
+      link.target = "_blank";
+      link.innerHTML = `<button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" style="background-color: #1E88E5;">Browse</button>`;
+      actionCell.appendChild(link);
+      row.appendChild(actionCell);
+
+      tableBody.appendChild(row);
+    });
+  </script>
+</body>
+</html>
