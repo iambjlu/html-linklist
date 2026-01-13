@@ -5,4 +5,5 @@
 於 index.html 的 <code>const sites</code> 程式碼區塊列出連結名稱和網址<br>
 
 <h2>實際使用畫面</h2>
+後續介面有更動，請以實際檔案為準
 <img src="https://github.com/iambjlu/html-linklist/blob/main/Readme_src/Screenshot%202025-08-10%20at%2011.28.14.png?raw=true"></img>
