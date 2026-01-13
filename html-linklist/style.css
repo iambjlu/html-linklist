@@ -70,7 +70,7 @@ body {
     position: relative;
     border: none;
     border-collapse: collapse;
-    white-space: nowrap;
+    white-space: normal;
     background-color: rgb(255, 255, 255);
     width: 100%;
     /* MDL Shadow 2dp */
