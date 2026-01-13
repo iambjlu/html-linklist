@@ -1,0 +1,200 @@
+/* Google Material Design Lite (MDL) Replacement Styles */
+
+
+/* Global Reset & Typography */
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+    /* MDL Grey background */
+    color: rgba(0, 0, 0, 0.87);
+    font-family: '-apple-system', 'BlinkMacSystemFont', 'SF Pro', 'SF Pro Display', 'PingFang TC', 'Inter', 'Roboto', 'AppleGothic', 'Microsoft JhengHei UI', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-touch-callout: none;
+}
+
+/* Layout Header */
+.mdl-layout__header {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    min-height: 64px;
+    padding: 0;
+    background-color: #1E88E5;
+    /* Material Blue 600 */
+    color: white;
+    box-shadow: 0 2px 4px -1px rgba(0, 0, 0, .2),
+        0 4px 5px 0 rgba(0, 0, 0, .14),
+        0 1px 10px 0 rgba(0, 0, 0, .12);
+    z-index: 10;
+    position: relative;
+    box-sizing: border-box;
+}
+
+.mdl-layout__header-row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    height: 64px;
+    padding: 0 16px 0 24px;
+    /* Default MDL padding */
+    box-sizing: border-box;
+}
+
+.mdl-layout-title {
+    display: block;
+    font-family: inherit;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: normal;
+    letter-spacing: .02em;
+    color: inherit;
+}
+
+/* Page Content Container */
+.page-content {
+    /* Existing inline styles handle max-width/margin/padding */
+    /* Ensuring container behavior */
+    display: block;
+    box-sizing: border-box;
+}
+
+/* Data Table (Card Appearance) */
+.mdl-data-table {
+    position: relative;
+    border: none;
+    border-collapse: collapse;
+    white-space: nowrap;
+    background-color: rgb(255, 255, 255);
+    width: 100%;
+    /* MDL Shadow 2dp */
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14),
+        0 3px 1px -2px rgba(0, 0, 0, .2),
+        0 1px 5px 0 rgba(0, 0, 0, .12);
+    border-radius: 2px;
+    box-sizing: border-box;
+    margin-top: 20px;
+    /* Optional spacing if not handled by page-content padding */
+}
+
+/* Table Header */
+.mdl-data-table thead tr {
+    height: 56px;
+    /* Standard Header Height */
+}
+
+.mdl-data-table th {
+    position: relative;
+    vertical-align: middle;
+    text-align: left;
+    /* Based on user preference/inline style */
+    font-weight: 700;
+    font-size: 14px;
+    color: rgba(0, 0, 0, .54);
+    /* Secondary text color */
+    padding: 0 18px 0 24px;
+    box-sizing: border-box;
+    border-bottom: 1px solid rgba(0, 0, 0, .12);
+}
+
+/* Table Body */
+.mdl-data-table tbody tr {
+    position: relative;
+    height: 48px;
+    transition-duration: .28s;
+    transition-timing-function: cubic-bezier(.4, 0, .2, 1);
+    transition-property: background-color;
+}
+
+.mdl-data-table tbody tr:hover {
+    background-color: #eeeeee;
+    /* Hover effect */
+}
+
+.mdl-data-table td {
+    position: relative;
+    vertical-align: middle;
+    height: 48px;
+    border-top: 1px solid rgba(0, 0, 0, .12);
+    border-bottom: 1px solid rgba(0, 0, 0, .12);
+    padding: 12px 18px 12px 24px;
+    box-sizing: border-box;
+    color: rgba(0, 0, 0, .87);
+}
+
+/* Buttons */
+.mdl-button {
+    background: transparent;
+    border: none;
+    border-radius: 2px;
+    color: rgb(0, 0, 0);
+    position: relative;
+    height: 36px;
+    min-width: 64px;
+    padding: 0 16px;
+    display: inline-flex;
+    /* improved alignment */
+    align-items: center;
+    justify-content: center;
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 500;
+    text-transform: uppercase;
+    line-height: 1;
+    letter-spacing: 0.04em;
+    overflow: hidden;
+    will-change: box-shadow;
+    transition: box-shadow .2s cubic-bezier(.4, 0, 1, 1), background-color .2s cubic-bezier(.4, 0, .2, 1), color .2s cubic-bezier(.4, 0, .2, 1);
+    outline: none;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+/* Raised Button Style */
+.mdl-button--raised {
+    background: rgba(158, 158, 158, .2);
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14),
+        0 3px 1px -2px rgba(0, 0, 0, .2),
+        0 1px 5px 0 rgba(0, 0, 0, .12);
+}
+
+.mdl-button--raised:active {
+    box-shadow: 0 4px 5px 0 rgba(0, 0, 0, .14),
+        0 1px 10px 0 rgba(0, 0, 0, .12),
+        0 2px 4px -1px rgba(0, 0, 0, .2);
+}
+
+/* Colored Raised Button (Blue as requested) */
+/* Note: Inline styles in HTML might already set background-color: #1E88E5 */
+.mdl-button--raised.mdl-button--colored {
+    background: #1E88E5;
+    color: rgb(255, 255, 255);
+}
+
+.mdl-button--colored:focus:not(:active) {
+    background-color: #1976D2;
+    /* Darker Focus */
+}
+
+.mdl-button--colored:active {
+    background-color: #1565C0;
+    /* Darker Active */
+}
+
+/* Specific Action Column Adjustment */
+.browse-button {
+    /* Matches use in index.html */
+    text-align: right;
+    padding-right: 24px;
+}
+
+/* Ensure links inside table don't mess up button layout */
+.browse-button a {
+    text-decoration: none;
+}
